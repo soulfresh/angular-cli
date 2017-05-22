@@ -146,6 +146,11 @@
                   "type": "string"
                 },
                 "default": []
+              },
+              "compress": {
+                "description": "Whether or not to compress the generated stylesheet output.",
+                "type": "boolean",
+                "default": false
               }
             },
             "additionalProperties": false

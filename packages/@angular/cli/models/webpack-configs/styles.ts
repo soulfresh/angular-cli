@@ -98,12 +98,15 @@ export function getStylesConfig(wco: WebpackConfigOptions) {
   // use includePaths from appConfig
   const includePaths: string[] = [];
 
-  if (appConfig.stylePreprocessorOptions
-    && appConfig.stylePreprocessorOptions.includePaths
-    && appConfig.stylePreprocessorOptions.includePaths.length > 0
-  ) {
-    appConfig.stylePreprocessorOptions.includePaths.forEach((includePath: string) =>
-      includePaths.push(path.resolve(appRoot, includePath)));
+  if (appConfig.stylePreprocessorOptions){
+    if( appConfig.stylePreprocessorOptions.includePaths
+      && appConfig.stylePreprocessorOptions.includePaths.length > 0
+    ) {
+      appConfig.stylePreprocessorOptions.includePaths.forEach((includePath: string) =>
+        includePaths.push(path.resolve(appRoot, includePath)));
+    }
+
+    compressStyles = appConfig.stylePreprocessorOptions.compress;
   }
 
   // process global styles
