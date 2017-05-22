@@ -131,7 +131,8 @@ export function getStylesConfig(wco: WebpackConfigOptions) {
           sourceMap: cssSourceMap,
           // bootstrap-sass requires a minimum precision of 8
           precision: 8,
-          includePaths
+          includePaths,
+          outputStyle: compressStyles ? 'compressed' : 'expanded'
         }
       }]
     },
