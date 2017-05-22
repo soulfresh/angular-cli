@@ -97,6 +97,7 @@ export function getStylesConfig(wco: WebpackConfigOptions) {
 
   // use includePaths from appConfig
   const includePaths: string[] = [];
+  let compressStyles = false;
 
   if (appConfig.stylePreprocessorOptions){
     if( appConfig.stylePreprocessorOptions.includePaths
